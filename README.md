@@ -138,20 +138,6 @@ Berdasarkan pemeriksaan awal, diperoleh hasil sebagai berikut:
 6. Jalankan tahapan preprocessing.
 7. Simpan hasil preprocessing dalam format CSV.
 
-## 📁 Struktur Project
-
-```text
-StudentsPerformance-EDA-Preprocessing/
-│
-├── StudentsPerformance.csv
-│
-├── StudentsPerformance_Preprocessed.csv
-│
-├── EDA_Preprocessing.ipynb
-│
-└── README.md
-```
-
 ## 📝 Kesimpulan
 
 Melalui project ini, dilakukan analisis eksplorasi dan preprocessing terhadap dataset Students Performance untuk memahami karakteristik data serta mempersiapkannya sebelum digunakan dalam pemodelan Machine Learning.
