@@ -159,9 +159,3 @@ Melalui project ini, dilakukan analisis eksplorasi dan preprocessing terhadap da
 Tahapan EDA membantu mengidentifikasi pola distribusi, hubungan antarvariabel, dan kemungkinan outlier. Sementara itu, preprocessing dilakukan untuk memastikan data memiliki format dan kualitas yang sesuai untuk kebutuhan analisis lanjutan.
 
 Project ini diharapkan dapat menjadi dasar untuk analisis lebih lanjut mengenai faktor-faktor yang berhubungan dengan performa akademik siswa.
-
----
-
-**Project Category:** Data Analysis | Exploratory Data Analysis | Data Preprocessing | Machine Learning
-
-**Environment:** Python & Google Colab
