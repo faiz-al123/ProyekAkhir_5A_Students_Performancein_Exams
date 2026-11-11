@@ -1,147 +1,77 @@
-# Students Performance Dataset - EDA & Data Preprocessing
+# Analisis Performa Siswa
 
-## 📌 Deskripsi Project
+Proyek ini melakukan eksplorasi data (Exploratory Data Analysis/EDA) dan preprocessing pada dataset **StudentsPerformance.csv** untuk memahami karakteristik nilai siswa serta menyiapkan data agar dapat digunakan pada analisis atau pemodelan lebih lanjut.
 
-Project ini bertujuan untuk melakukan **Exploratory Data Analysis (EDA)** dan **Data Preprocessing** pada dataset Students Performance. Analisis dilakukan untuk memahami karakteristik data siswa, menemukan pola hubungan antarvariabel, serta mempersiapkan dataset agar dapat digunakan dalam proses Machine Learning.
+## Anggota Kelompok
 
-Dataset berisi informasi mengenai karakteristik siswa, latar belakang pendidikan orang tua, jenis makan siang, keikutsertaan dalam kursus persiapan ujian, serta nilai akademik siswa pada mata pelajaran matematika, membaca, dan menulis.
+| No. | Nama | NIM |
+|---|---|---|
+| 1 | Nazwa Hummaimah Shiddqin | 2488010039 |
+| 2 | Faiz Alfaresi | 2488010012 |
+| 3 | Ahmad Aly | 2488010069 |
 
-## 🎯 Tujuan Project
+## Paket dan Teknologi
 
-1. Memahami struktur dan karakteristik dataset.
-2. Mengidentifikasi missing values dan data duplikat.
-3. Menganalisis distribusi data kategorikal dan numerik.
-4. Mengidentifikasi kemungkinan outlier.
-5. Menganalisis korelasi antarvariabel.
-6. Melakukan feature engineering.
-7. Melakukan encoding pada data kategorikal.
-8. Melakukan standardisasi data numerik.
-9. Mempersiapkan dataset untuk kebutuhan Machine Learning.
+Proyek dijalankan menggunakan Python, terutama melalui Google Colab.
 
-## 📂 Dataset
+Paket yang digunakan:
+- `pandas` — membaca, mengelola, dan memanipulasi data.
+- `numpy` — operasi numerik.
+- `matplotlib` — membuat visualisasi data.
+- `seaborn` — membuat visualisasi statistik.
+- `scikit-learn` — standardisasi fitur numerik menggunakan `StandardScaler` pada tahap preprocessing.
 
-Dataset yang digunakan adalah **StudentsPerformance.csv**.
+Paket dapat dipasang dengan perintah berikut jika belum tersedia:
 
-Dataset memiliki 1.000 baris data dan 8 kolom.
+```bash
+pip install pandas numpy matplotlib seaborn scikit-learn
+```
 
-### Atribut Dataset
+## Metode
 
-| No | Atribut | Keterangan | Tipe Data |
-|---|---|---|---|
-| 1 | gender | Jenis kelamin siswa | Kategorikal |
-| 2 | race/ethnicity | Kelompok etnis siswa | Kategorikal |
-| 3 | parental level of education | Tingkat pendidikan orang tua | Kategorikal |
-| 4 | lunch | Jenis makan siang siswa | Kategorikal |
-| 5 | test preparation course | Keikutsertaan kursus persiapan ujian | Kategorikal |
-| 6 | math score | Nilai matematika | Numerik |
-| 7 | reading score | Nilai membaca | Numerik |
-| 8 | writing score | Nilai menulis | Numerik |
+### 1. Exploratory Data Analysis (EDA)
 
-## 🛠️ Tools dan Library
+EDA dilakukan untuk memahami struktur dan karakteristik dataset sebelum preprocessing, meliputi:
+- Melihat beberapa baris awal dan akhir dataset.
+- Memeriksa jumlah baris, kolom, tipe data, dan statistik deskriptif.
+- Memeriksa nilai kosong dan data duplikat.
+- Menganalisis distribusi fitur kategorikal menggunakan tabel frekuensi dan count plot.
+- Menganalisis distribusi nilai matematika, membaca, dan menulis menggunakan histogram.
+- Mengidentifikasi sebaran dan kemungkinan pencilan nilai menggunakan boxplot.
+- Melihat hubungan antarvariabel numerik melalui heatmap korelasi.
+- Membandingkan rata-rata nilai berdasarkan gender dan keikutsertaan dalam test preparation course.
 
-Project ini menggunakan beberapa tools dan library Python:
+### 2. Preprocessing Data
 
-- **Google Colab** – Environment untuk menjalankan kode Python.
-- **Pandas** – Manipulasi dan analisis data.
-- **NumPy** – Operasi numerik.
-- **Matplotlib** – Visualisasi data.
-- **Seaborn** – Visualisasi statistik.
-- **Scikit-learn** – Preprocessing dan persiapan Machine Learning.
+Tahap preprocessing menyiapkan data untuk analisis lanjutan, meliputi:
+- Menyalin dataset mentah agar data asli tetap tersedia.
+- Merapikan spasi pada nama kolom dan nilai kategorikal.
+- Menghapus data duplikat jika ditemukan.
+- Memeriksa agar nilai pada kolom skor berada pada rentang 0–100.
+- Membuat fitur baru `average_score` dari rata-rata nilai matematika, membaca, dan menulis.
+- Mengubah fitur kategorikal menjadi fitur numerik menggunakan One-Hot Encoding.
+- Melakukan standardisasi pada kolom nilai numerik menggunakan `StandardScaler`.
 
-## 🔍 Exploratory Data Analysis (EDA)
+Catatan: jika data akan digunakan untuk machine learning, pembagian data train dan test sebaiknya dilakukan sebelum melakukan fitting scaler. `StandardScaler` harus di-fit hanya pada data train untuk menghindari data leakage.
 
-Tahapan EDA yang dilakukan meliputi:
+## Tautan Aplikasi
 
-1. **Data Understanding**
-   - Melihat lima data pertama dan terakhir.
-   - Memeriksa informasi dataset.
-   - Melihat tipe data dan dimensi dataset.
-   - Menghitung statistik deskriptif.
+**Tautan aplikasi**:
+1. Eksplorasi: https://colab.research.google.com/drive/1iHwjzjUvUB46e_ccla8TZWQ3ZfOtJut_?usp=sharing
+2. Preprocessing: https://colab.research.google.com/drive/1l3sqqJb7Iw3yyWZmmvb_-2GFsmDyJoB1
 
-2. **Missing Values Analysis**
-   - Memeriksa jumlah missing values.
-   - Menghitung persentase missing values.
-   - Membuat visualisasi missing values.
+## Cara Menjalankan
 
-3. **Duplicate Data Analysis**
-   - Memeriksa jumlah data duplikat.
-   - Mengidentifikasi baris yang memiliki nilai identik.
+1. Buka tautan aplikasi/notebook pada bagian **Tautan Aplikasi** menggunakan Google Colab.
+2. Pastikan file dataset `StudentsPerformance.csv` tersedia.
+3. Jika menjalankan notebook di Google Colab, unggah dataset ketika sel upload file dijalankan, atau sesuaikan lokasi/path file pada kode.
+4. Jalankan setiap sel secara berurutan dari bagian awal hingga akhir.
+5. Pada notebook EDA, amati ringkasan data dan visualisasi yang dihasilkan.
+6. Untuk preprocessing, jalankan notebook atau bagian preprocessing secara terpisah dengan memuat kembali dataset mentah `StudentsPerformance.csv`.
+7. Setelah proses selesai, periksa file hasil preprocessing yang disimpan oleh notebook.
 
-4. **Univariate Analysis**
-   - Menganalisis distribusi atribut kategorikal.
-   - Menganalisis distribusi nilai matematika, membaca, dan menulis.
+## Dataset
 
-5. **Outlier Analysis**
-   - Menggunakan boxplot untuk mengidentifikasi kemungkinan outlier.
+Dataset yang digunakan adalah `StudentsPerformance.csv`, yang memuat informasi kategorikal siswa serta nilai pada tiga mata pelajaran: matematika, membaca, dan menulis.
 
-6. **Bivariate Analysis**
-   - Menganalisis korelasi antar nilai akademik.
-   - Membandingkan rata-rata nilai berdasarkan gender.
-   - Membandingkan rata-rata nilai berdasarkan keikutsertaan dalam test preparation course.
-
-## ⚙️ Data Preprocessing
-
-Tahapan preprocessing yang dilakukan:
-
-1. **Copy Dataset**
-   - Membuat salinan dataset untuk menjaga data asli.
-
-2. **Remove Duplicate**
-   - Menghapus baris data duplikat menggunakan `drop_duplicates()`.
-
-3. **Handle Missing Values**
-   - Mengisi missing values numerik menggunakan median.
-   - Mengisi missing values kategorikal menggunakan modus.
-
-4. **Outlier Detection**
-   - Mengidentifikasi outlier menggunakan metode Interquartile Range (IQR).
-   - Mempertahankan nilai ekstrem yang masih valid.
-
-5. **Feature Engineering**
-   - Membuat fitur `total_score`.
-   - Membuat fitur `average_score`.
-
-6. **Categorical Encoding**
-   - Mengubah atribut kategorikal menggunakan One-Hot Encoding.
-
-7. **Feature Scaling**
-   - Melakukan standardisasi menggunakan StandardScaler.
-
-8. **Train Test Split**
-   - Membagi dataset menjadi 80% data training dan 20% data testing.
-
-9. **Pipeline Preprocessing**
-   - Menggunakan ColumnTransformer dan Pipeline untuk menghindari data leakage pada proses pemodelan.
-
-## 📊 Hasil Pemeriksaan Awal Dataset
-
-Berdasarkan pemeriksaan awal, diperoleh hasil sebagai berikut:
-
-| Pemeriksaan | Hasil |
-|---|---|
-| Jumlah baris | 1.000 |
-| Jumlah kolom | 8 |
-| Missing values | 0 |
-| Data duplikat | 0 |
-| Atribut numerik | 3 |
-| Atribut kategorikal | 5 |
-
-**Catatan:** Dataset tidak memiliki missing values maupun data duplikat. Oleh karena itu, proses penghapusan duplikat tidak mengurangi jumlah baris data.
-
-## 🚀 Cara Menjalankan Project
-
-1. Buka Google Colab melalui https://colab.research.google.com/
-2. Upload notebook project.
-3. Upload file `StudentsPerformance.csv`.
-4. Jalankan setiap cell secara berurutan mulai dari import library hingga preprocessing.
-5. Periksa hasil visualisasi EDA.
-6. Jalankan tahapan preprocessing.
-7. Simpan hasil preprocessing dalam format CSV.
-
-## 📝 Kesimpulan
-
-Melalui project ini, dilakukan analisis eksplorasi dan preprocessing terhadap dataset Students Performance untuk memahami karakteristik data serta mempersiapkannya sebelum digunakan dalam pemodelan Machine Learning.
-
-Tahapan EDA membantu mengidentifikasi pola distribusi, hubungan antarvariabel, dan kemungkinan outlier. Sementara itu, preprocessing dilakukan untuk memastikan data memiliki format dan kualitas yang sesuai untuk kebutuhan analisis lanjutan.
-
-Project ini diharapkan dapat menjadi dasar untuk analisis lebih lanjut mengenai faktor-faktor yang berhubungan dengan performa akademik siswa.
+Pastikan nama file dan lokasi dataset sesuai dengan yang digunakan pada kode notebook.
