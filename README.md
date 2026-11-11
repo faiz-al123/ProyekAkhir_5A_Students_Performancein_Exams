@@ -60,16 +60,6 @@ Catatan: jika data akan digunakan untuk machine learning, pembagian data train d
 1. Eksplorasi: https://colab.research.google.com/drive/1iHwjzjUvUB46e_ccla8TZWQ3ZfOtJut_?usp=sharing
 2. Preprocessing: https://colab.research.google.com/drive/1l3sqqJb7Iw3yyWZmmvb_-2GFsmDyJoB1
 
-## Cara Menjalankan
-
-1. Buka tautan aplikasi/notebook pada bagian **Tautan Aplikasi** menggunakan Google Colab.
-2. Pastikan file dataset `StudentsPerformance.csv` tersedia.
-3. Jika menjalankan notebook di Google Colab, unggah dataset ketika sel upload file dijalankan, atau sesuaikan lokasi/path file pada kode.
-4. Jalankan setiap sel secara berurutan dari bagian awal hingga akhir.
-5. Pada notebook EDA, amati ringkasan data dan visualisasi yang dihasilkan.
-6. Untuk preprocessing, jalankan notebook atau bagian preprocessing secara terpisah dengan memuat kembali dataset mentah `StudentsPerformance.csv`.
-7. Setelah proses selesai, periksa file hasil preprocessing yang disimpan oleh notebook.
-
 ## Dataset
 
 Dataset yang digunakan adalah `StudentsPerformance.csv`, yang memuat informasi kategorikal siswa serta nilai pada tiga mata pelajaran: matematika, membaca, dan menulis.
